@@ -6,6 +6,8 @@
 - 터미널에 아래와 같이 입력
 <code>
 git clone https://github.com/mahanbin/dev-diary
+
 cd dev-diary
+
 python manage.py runserver
 </code>

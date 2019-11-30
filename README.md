@@ -4,10 +4,11 @@
 
 ## 답안 확인 방법
 - 터미널에 아래와 같이 입력
-'''
+
+```
 git clone https://github.com/mahanbin/dev-diary
 
 cd dev-diary
 
 python manage.py runserver
-'''
+```

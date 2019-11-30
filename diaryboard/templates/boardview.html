@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="boardContainer">
+    {% for post in posts%}
+            <h4 class="text-success">{{post.title}}</h4>
+            <p>{{post.content}}</p>
+            <p class="mb-3">{{post.author}} / {{post.created_date}}</p>
+    {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="boardContainer">
+        <h4 class="text-success">{{post.title}}</h4>
+        <p>{{post.content}}</p>
+        <p class="mb-3 text-black-50">{{post.author}}이 {{post.created_date|date:"m월 d일 h시 m분"}}에 쓴 글</p>
+        <a href="{% url 'update' post.id %}" class="p-2 m-1 text-dark bg-info"> 수정하기 </a>
+        <a href="{% url 'delete' post.id %}" class="p-2 m-1 text-dark bg-warning"> 삭제하기 </a>
+    </div>
+{% endblock %}

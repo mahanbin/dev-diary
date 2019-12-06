@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', diaryboard.views.index, name='index'),
     path('boardview/', diaryboard.views.boardview, name='boardview'),
-    path('new/', diaryboard.views.boardwrite, name='boardwrite')
+    path('new/', diaryboard.views.boardwrite, name='boardwrite'),
+    path('board/<int:post_id>/', diaryboard.views.detail, name='detail'),
+    path('board/<int:post_id>/update/', diaryboard.views.update, name='update'),
+    path('board/<int:post_id>/delete/', diaryboard.views.delete, name='delete'),
 ]

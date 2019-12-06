@@ -4,9 +4,8 @@
 {% block content %}
     <div class="boardContainer">
     {% for post in posts%}
-            <h4 class="text-success">{{post.title}}</h4>
-            <p>{{post.content}}</p>
-            <p class="mb-3">{{post.author}} / {{post.created_date}}</p>
+        <h3 class="text-success">{{post.summary}}</h3> <a href="{% url 'detail' post.id %}">...more</a>
+        <p class="mb-3 text-black-50">{{post.author}}이 {{post.created_date|date:"m월 d일 h시 m분"}}에 쓴 글</p>
     {% endfor %}
     </div>
 {% endblock %}

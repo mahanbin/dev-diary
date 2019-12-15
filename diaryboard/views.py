@@ -3,15 +3,21 @@ from django.contrib import auth
 from .models import Post
 from django.conf import settings
 from .forms import postForm
+from django.core.paginator import Paginator
+
+all_posts = Post.objects.all()
 
 # Create your views here.
 def index(request):
-    return render(request,'index.html')
+    return render(request,'index.html',{'posts':all_posts})
 
 def boardview(request):
-    posts = Post.objects.all().order_by('-id')
+    posts = all_posts.order_by('-id')
+    paginator = Paginator(posts,7)
+    page = request.GET.get('page')
     context = {
-        'posts': posts
+        'posts': posts,
+        'pages': paginator.get_page(page)
     }
     return render(request,'boardview.html',context)
 
